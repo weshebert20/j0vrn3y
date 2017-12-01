@@ -1,0 +1,82 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #000;
+  position: relative;
+  margin-left: auto;
+  margin-top: 55%
+}
+body:after {
+  content: "";
+  opacity: 0.07;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.angle {
+  cursor: pointer;
+  width: 170%;
+  height: 1500px;
+  margin-bottom:-1000px;
+  padding: 0;
+  /*background-color: #201515;*/
+  background-size: cover, auto;
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-clip-path: polygon(50% 25%, 100% 0%, 100% 50%, 50% 75%, 0% 100%, 0% 50%);
+          clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%, 0% 100%, 0% 50%);
+  -webkit-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out;
+  background-blend-mode: lighten;
+}
+
+/*::-webkit-scrollbar { 
+    display: none; 
+}*/
+
+.one {
+  background-image: url(https://i.imgur.com/yqsIVqH.jpg);
+  margin-top: -700px;
+}
+
+.two {
+  background-image: url(https://i.imgur.com/lB8iz9k.jpg);
+}
+
+.three {
+  background-image: url(https://i.imgur.com/zvVrsn3.jpg);
+}
+
+.four {
+  background-image: url(https://i.imgur.com/wxe7ViF.jpg);
+}
+
+.five {
+  background-image: url(https://i.imgur.com/8HyQHDj.jpg);
+}
+
+.six {
+  background-image: url(https://i.imgur.com/XKZqegQ.jpg);
+}
+
+.seven {
+  background-image: url(https://i.imgur.com/F0qkmhr.jpg);
+}
+
+.eight {
+  background-image: url(https://i.imgur.com/FxvvRLX.jpg);
+}
+
+.nine {
+  background-image: url(https://i.imgur.com/cs6wUvj.jpg);
+}

@@ -1,4 +1,207 @@
-jQuery(document).ready(function($){
+
+$(document).ready(function($){
+    setTimeout(function() {
+        $('body').addClass('loaded');
+    }, 3000);
+
+
+///////////////////
+// star animations
+///////////////////
+
+
+var width = 1414;
+var height = 3200;
+
+
+var banner = document.querySelector("#banner");
+var baseStar = document.querySelector(".star");
+
+var frag = document.createDocumentFragment();
+
+
+var appearMin = 0.3;
+var appearMax = 0.8;
+
+var delayMin = 2;
+var delayMax = 6;
+
+var durationMin = 0.3;
+var durationMax = 1;
+
+var numAnimations = 50;
+var numStars = 2000;
+
+var stars = [];
+var eases = [];
+
+for (var i = 0; i < numAnimations; i++) {
+  
+  var ease = new RoughEase({ 
+    template:  Linear.easeNone, 
+    strength: random(1, 3), 
+    points: Math.floor(random(50, 200)), 
+    taper: "both", 
+    randomize: true, 
+    clamp: true
+  });
+  
+  eases.push(ease);
+}
+
+// Wait for images to load
+window.addEventListener("load", onLoad);
+
+function onLoad() {
+    
+  for (var i = 0; i < numStars; i++) {
+    stars.push(createStar());
+  }
+  
+  document.body.removeChild(baseStar);
+  banner.appendChild(frag);
+}
+
+function createStar() {
+  var star = baseStar.cloneNode(true);
+  frag.appendChild(star);
+  
+  TweenLite.set(star, {
+    rotation: random(360),
+    xPercent: -50,
+    yPercent: -50,
+    scale: 0,
+    x: random(width),
+    y: random(height),
+  });
+  
+  var tl = new TimelineMax({ repeat: -1, yoyo: true });
+   
+  for (var i = 0; i < numAnimations; i++) {
+    
+    var ease1 = eases[Math.floor(random(numAnimations))];
+    var ease2 = eases[Math.floor(random(numAnimations))];
+    
+    var alpha = random(0.7, 1);
+    var scale = random(0.15, 0.4);
+    
+    var appear = "+=" + random(appearMin, appearMax);
+    var delay = "+=" + random(delayMin, delayMax);  
+    var duration1 = random(durationMin, durationMax);
+    var duration2 = random(durationMin, durationMax);   
+    
+    tl.to(star, duration1, { autoAlpha: alpha, scale: scale, ease: ease1 }, delay)
+      .to(star, duration2, { autoAlpha: 0, scale: 0, ease: ease2 }, appear)
+  }
+    
+  tl.progress(random(1));
+  
+  return {
+    element: star,
+    timeline: tl
+  };
+}
+
+function random(min, max) {
+  if (max == null) { max = min; min = 0; }
+  if (min > max) { var tmp = min; min = max; max = tmp; }
+  return min + (max - min) * Math.random();
+}
+
+///////////////
+//scrollmagic
+///////////////
+
+var controller = new ScrollMagic.Controller();
+
+var pinIntro = new ScrollMagic.Scene({
+	duration: 2000
+})
+.setPin('#intro-img');
+controller.addScene(pinIntro);
+
+// var photoPar = new ScrollMagic.Scene({
+//   triggerHook: 1
+// })
+// .setPin('#image-back');
+// controller.addScene(photoPar);
+
+///////////
+//rellaxer
+///////////
+
+var rellax = new Rellax('.rellax');
+
+////////////////////
+// neon flickering//
+////////////////////
+
+var textHolder = document.getElementsByTagName('h1')[1],
+  text = textHolder.innerHTML,
+  chars = text.length,
+  newText = '',
+  i;  
+
+for (i = 0; i < chars; i += 1) {
+  newText += '<i>' + text.charAt(i) + '</i>';
+}
+
+textHolder.innerHTML = newText;
+
+var letters = document.getElementsByTagName('i'),
+  flickers = [5, 7, 9, 11, 13, 15, 17],
+  randomLetter,
+  flickerNumber,
+  counter;
+
+function randomFromInterval(from,to) {
+  return Math.floor(Math.random()*(to-from+1)+from);
+}
+
+function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
+function flicker() {    
+  counter += 1;
+  
+  if (counter === flickerNumber) {
+    return;
+  }
+
+  setTimeout(function () {
+    if(hasClass(randomLetter, 'off')) {
+      randomLetter.className = '';
+    }
+    else {
+      randomLetter.className = 'off';
+    }
+
+    flicker();
+  }, 30);
+}
+
+(function loop() {
+    var rand = randomFromInterval(500,3000);
+
+  randomLetter = randomFromInterval(0, 3);
+  randomLetter = letters[randomLetter];
+  
+  flickerNumber = randomFromInterval(0, 6);
+  flickerNumber = flickers[flickerNumber];
+
+    setTimeout(function() {
+            counter = 0;
+            flicker();
+            loop();  
+    }, rand);
+}());
+
+
+//////////////////
+//parallax photo//
+//////////////////
+
 	//define store some initial variables
 	var	halfWindowH = $(window).height()*0.5,
 		halfWindowW = $(window).width()*0.5,
@@ -116,4 +319,8 @@ jQuery(document).ready(function($){
     }
     document.body.removeChild(element);
 
+
 })();
+
+
+

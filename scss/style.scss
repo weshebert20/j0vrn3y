@@ -42,7 +42,7 @@ Main Components
 	background-color: $color-3;
 	position: relative;
 	overflow: hidden;
-	@include perspective(4000px);
+	@include perspective(2000px);
 }
 
 .cd-floating-background {
@@ -71,7 +71,7 @@ Main Components
 	}
 
 	img:first-child {
-		@include transform(translateZ(50px));
+		@include transform(translateZ(200px));
 	}
 
 	img:nth-child(2) {
