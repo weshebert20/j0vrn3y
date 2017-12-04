@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="./assets/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="./assets/css/style4.css"> <!-- style -->
+  	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+	<title>mist</title>
+</head>
+<body>
+
+<!--///////////-->
+<!-- Preloader -->
+<!--///////////-->
+
+<div id="preloader"></div>
+
+<!-- background photo with light svg-->
+<div class="light-flash">
+
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="bump" x="0" y="0">
+          <feImage xlink:href="./assets/img/misty.jpg" result="texture" 
+          />
+          <feImage xlink:href="./assets/img/misty.jpg" result="bumpMap"/>
+          <feColorMatrix in="bumpMap" type="luminanceToAlpha" result="bumpMap"/>
+
+          <feDiffuseLighting in="bumpMap" 
+                          surfaceScale=".5"
+                          diffuseConstant="1"
+                          result="shading">
+            <fePointLight id="light" x="400" y="200" z="200">
+                     
+            </fePointLight>
+          </feDiffuseLighting>
+    
+        <feBlend in="texture" in2="shading" mode="multiply" result="lit"/>
+        
+      </filter>
+    </defs>
+</svg>
+
+</div>
+
+<!-- neon sign -->
+<div class="container">
+  	<a href="" class="neon-one glitch"><h1>J Ô V R N 3 Ÿ</h1></a>
+</div>
+
+
+<!-- glitch effect on hover -->
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+
+      <filter id="glitch" x="0" y="0">
+          <feColorMatrix in="SourceGraphic" mode="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+            
+        <feOffset in="r" result="r" dx="-5">
+          <animate attributeName="dx" attributeType="XML" values="0; -5; 0; -18; -2; -4; 0 ;-3; 0" dur="0.2s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+
+        <feOffset in="g" result="g" dx="-5" dy="1">
+          <animate attributeName="dx" attributeType="XML" values="0; 0; 0; -3; 0; 8; 0 ;-1; 0" dur="0.15s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+
+        <feOffset in="b" result="b" dx="5" dy="2">
+          <animate attributeName="dx" attributeType="XML" values="0; 3; -1; 4; 0; 2; 0 ;18; 0" dur="0.35s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feBlend in="r" in2="g" mode="screen" result="blend" />
+        <feBlend in="blend" in2="b" mode="screen" result="blend" />
+      </filter>
+    </defs>
+</svg>
+
+
+
+<script src="./assets/js/jquery-2.1.1.js"></script>
+<script src="./assets/js/main4.js"></script> 
+
+</body>
+</html>
