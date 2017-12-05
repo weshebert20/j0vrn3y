@@ -347,12 +347,11 @@ function load_moon_phases(obj){
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var moon  = JSON.parse(xmlhttp.responseText)
-      example_1(moon)
+      example_1(moon);
     }
   }
   xmlhttp.open("GET", url, true)
   xmlhttp.send()
-
 document.addEventListener("DOMContentLoaded", function() { 
   var configMoon = {
     lang      :'en',
