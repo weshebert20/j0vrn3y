@@ -8,6 +8,9 @@
   background: #000 url('../img/preloader-2.gif') no-repeat center center; 
 }
 
+a {
+  cursor: none;
+}
 
 body {
   display: -webkit-box;
@@ -17,35 +20,50 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #000;
   position: relative;
-  margin-left: auto;
-  margin-top: 55%
+  margin: auto;
 }
-body:after {
-  content: "";
-  opacity: 0.07;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: 100;
-  pointer-events: none;
+
+/*neon sign*/
+.neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff,
+    0 0 80px #fff,
+    0 0 90px #fff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+    position: fixed;
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 4px;
+    top: 20%;
+    left: 15%;
+    position: fixed;
+    font-size: 2rem;
+}
+
+/*glitch*/
+.glitch:hover {
+  -webkit-filter: url("#glitch");
+  filter: url("#glitch");
+}
+
+svg {
+  height: 0;
 }
 
 .angle {
-  cursor: pointer;
-  width: 170%;
+  cursor: url('../img/starpng.png'), crosshair;
+  width: 100%;
   height: 1500px;
-  margin-bottom:-1000px;
   padding: 0;
   /*background-color: #201515;*/
   background-size: cover, auto;
   background-attachment: fixed;
   background-position: center center;
-  -webkit-clip-path: polygon(50% 25%, 100% 0%, 100% 50%, 50% 75%, 0% 100%, 0% 50%);
-          clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%, 0% 100%, 0% 50%);
   -webkit-transition: all .7s ease-in-out;
   transition: all .7s ease-in-out;
   background-blend-mode: lighten;
@@ -57,7 +75,6 @@ body:after {
 
 .one {
   background-image: url(https://i.imgur.com/yqsIVqH.jpg);
-  margin-top: -700px;
 }
 
 .two {
@@ -91,5 +108,6 @@ body:after {
 .nine {
   background-image: url(https://i.imgur.com/cs6wUvj.jpg);
 }
+
 
 

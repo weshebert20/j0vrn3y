@@ -13,6 +13,11 @@ body{
   color:white;
   line-height:2;
   width: 100%;
+  cursor: crosshair;
+}
+
+a {
+  cursor: none;
 }
 
 #preloader { 
@@ -48,7 +53,7 @@ body{
     0 0 150px #0ff;
     position: absolute;
     top: 40%;
-    right: 30%;
+    right: 10%;
     font-size: 1rem;
     font-family: 'Dosis', sans-serif;
     display: inline-flex;

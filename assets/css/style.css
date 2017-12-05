@@ -31,6 +31,7 @@ body {
 a {
   color: #196a74;
   text-decoration: none;
+  cursor: none;
 }
 
 
@@ -69,17 +70,17 @@ Main Components
     0 0 150px #0ff;
     position: absolute;
     top: 40%;
-    right: 54%;
+    right: 46%;
     font-size: 9rem;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Inconsolata', monospace;
     z-index: 1;
     display: inline-flex;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 .moon{
     display: inline-block;
-    margin: 0 6px;
+    margin: 8px 24px;
 }
 
 #banner {
@@ -213,14 +214,14 @@ Main Components
 }
 
 .neonone {
-    position: absolute;
     bottom: 46%;
     right: 47%;
     z-index: 2;
+    font-size: 1rem;
 }
 
 i {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Inconsolata', monospace;
   color: #fff;
   text-shadow:
     0 0 5px #fff,
@@ -231,7 +232,7 @@ i {
     0 0 90px #fff,
     0 0 100px #0ff,
     0 0 150px #0ff;
-  font-size: 9rem;
+  font-size: 3rem;
 }
 
 i.off {
@@ -240,9 +241,9 @@ i.off {
 }
 
 section.p5 a {
-  width: 370px;
+  text-align: center;
+  width:30%;
   height: 94px;
-  line-height: 94px;
   position: absolute;
   top: 50%;
   left: 50%;

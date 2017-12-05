@@ -1,7 +1,17 @@
 $(document).ready(function($){
 $(window).load(function(){
   $('#preloader').fadeOut('slow',function(){$(this).remove();});
+  $(".neon").hide();
   });
+});
+
+$(window).bind("scroll", function() {
+
+    if ($(this).scrollTop() > 420) {
+        $(".neon").fadeIn(3000);
+    } else {
+        $(".neon").stop().fadeOut();
+    }
 });
 
 // select video element

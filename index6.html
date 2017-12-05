@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>space</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="./assets/css/tilteffect.css" />
+	<link rel="stylesheet" type="text/css" href="./assets/css/style6.css" />
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+</head>
+<body>
+
+<!--///////////-->
+<!-- Preloader -->
+<!--///////////-->
+
+<div id="preloader"></div>
+
+<div class="container">
+	<header class="tilty-header">
+		<div class="hero">
+			<div class="hero__imgwrap">
+				<img class="hero__img tilt-effect" data-tilt-options='{ "opacity" : 0.6, "movement": { "perspective" : 1500, "translateX" : 10, "translateY" : 10, "translateZ" : 2, "rotateX" : 3, "rotateY" : 3 } }' src="./assets/img/space1.jpg" alt="Hero image" />
+			</div>
+		</div>
+	<div class="container">
+  		<a href="index4.html"><h1 class="neon glitch">Along the coast we could see time and space</h1></a>
+	</div>			
+</div>
+
+<!-- glitch effect on hover -->
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+
+      <filter id="glitch" x="0" y="0">
+          <feColorMatrix in="SourceGraphic" mode="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+            
+        <feOffset in="r" result="r" dx="-5">
+          <animate attributeName="dx" attributeType="XML" values="0; -5; 0; -18; -2; -4; 0 ;-3; 0" dur="0.2s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+
+        <feOffset in="g" result="g" dx="-5" dy="1">
+          <animate attributeName="dx" attributeType="XML" values="0; 0; 0; -3; 0; 8; 0 ;-1; 0" dur="0.15s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+
+        <feOffset in="b" result="b" dx="5" dy="2">
+          <animate attributeName="dx" attributeType="XML" values="0; 3; -1; 4; 0; 2; 0 ;18; 0" dur="0.35s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feBlend in="r" in2="g" mode="screen" result="blend" />
+        <feBlend in="blend" in2="b" mode="screen" result="blend" />
+      </filter>
+    </defs>
+</svg>
+
+<!-- tilt js -->
+<script src="./assets/js/jquery-2.1.1.js"></script>
+<script src="./assets/js/tiltfx.js"></script>
+</body>
+</html>

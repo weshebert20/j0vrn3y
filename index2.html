@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="./assets/css/style2.css"> <!-- Resource style -->
 	<script src="./assets/js/modernizr.js"></script> <!-- Modernizr -->
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 	<title>Mountains</title>
 </head>
 <body>
@@ -14,7 +15,16 @@
 <!--///////////-->
 
     <div id="preloader"></div>
- 
+	<a href="index3.html">
+ 	<h1 class="neon glitch">
+ 		<span class="neonone">Dusk</span> 
+ 		<span class="neontwo">and</span> 
+ 		<span class="neonthree">the</span> 
+ 		<span class="neonfour">tide</span> 
+ 		<span class="neonfive">goes</span> 
+ 		<span class="neonsix">out</span>
+ 	</h1>
+ 	</a>
   
 	<!-- row of photos -->
 	<div class="angle one"><</div>
@@ -26,6 +36,37 @@
 	<div class="angle seven"></div>
 	<div class="angle eight"></div>
 	<div class="angle nine"></div>
+	<div class="end"></div>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+
+      <filter id="glitch" x="0" y="0">
+          <feColorMatrix in="SourceGraphic" mode="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+            
+        <feOffset in="r" result="r" dx="-5">
+          <animate attributeName="dx" attributeType="XML" values="0; -5; 0; -18; -2; -4; 0 ;-3; 0" dur="0.2s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+
+        <feOffset in="g" result="g" dx="-5" dy="1">
+          <animate attributeName="dx" attributeType="XML" values="0; 0; 0; -3; 0; 8; 0 ;-1; 0" dur="0.15s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feColorMatrix in="SourceGraphic" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+
+        <feOffset in="b" result="b" dx="5" dy="2">
+          <animate attributeName="dx" attributeType="XML" values="0; 3; -1; 4; 0; 2; 0 ;18; 0" dur="0.35s" repeatCount="indefinite"/>
+        </feOffset>
+
+        <feBlend in="r" in2="g" mode="screen" result="blend" />
+        <feBlend in="blend" in2="b" mode="screen" result="blend" />
+      </filter>
+    </defs>
+</svg>
+
+<!-- <iframe width="100%" height="0" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/220516489&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe> -->
 
 
 <script src="./assets/js/jquery-2.1.1.js"></script>
