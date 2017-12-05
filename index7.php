@@ -1,6 +1,6 @@
 <?php 
-	include 'dbh.inc.php';
-	include 'comments.inc.php';
+	include './assets/php/dbh.inc.php';
+	include './assets/php/comments.inc.php';
 ?>
 
 <!DOCTYPE html>
