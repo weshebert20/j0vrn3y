@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="style5.css">
+	<link rel="stylesheet" href="./assets/css/style5.css">
 	<title>Document</title>
 
 </head>
